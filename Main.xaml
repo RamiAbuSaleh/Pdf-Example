@@ -52,6 +52,9 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="633.6,824" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -63,12 +66,12 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,114.5</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,107.7 240,107.7 240,53.6 100,53.6 100,83.6</av:PointCollection>
         <x:Double x:Key="Height">787.59999999999991</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
     </Flowchart.StartNode>
     <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_3">
       <sap:WorkflowViewStateService.ViewState>
@@ -126,8 +129,8 @@
                     <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ReadPDFText DisplayName="Read PDF Text" FileName="NPO Invoice.pdf" sap:VirtualizedContainerService.HintSize="652,60" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[extractedText]" />
-                <Assign sap:VirtualizedContainerService.HintSize="652,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <ui:ReadPDFText DisplayName="Read PDF Text" FileName="NPO Invoice.pdf" sap:VirtualizedContainerService.HintSize="1036,60" sap2010:WorkflowViewState.IdRef="ReadPDFText_2" Range="All" Text="[extractedText]" />
+                <Assign sap:VirtualizedContainerService.HintSize="1036,80.8" sap2010:WorkflowViewState.IdRef="Assign_1">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[arrayText]</OutArgument>
                   </Assign.To>
@@ -135,15 +138,15 @@
                     <InArgument x:TypeArguments="s:String[]">[extractedText.Split(Environment.NewLine.ToArray, StringSplitOptions.RemoveEmptyEntries)]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <If Condition="[arrayText(0).Equals(&quot;Tiefland Glass AG&quot;)]" sap:VirtualizedContainerService.HintSize="652,702.4" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[arrayText(0).Equals(&quot;Tiefland Glass AG&quot;)]" sap:VirtualizedContainerService.HintSize="1036,835.2" sap2010:WorkflowViewState.IdRef="If_4">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="304,552.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,676" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_10">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:GenericValue">[address]</OutArgument>
                         </Assign.To>
@@ -151,7 +154,7 @@
                           <InArgument x:TypeArguments="ui:GenericValue">[arrayText(2)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[city]</OutArgument>
                         </Assign.To>
@@ -159,7 +162,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(3).Split(","c)(0)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[phoneNumber]</OutArgument>
                         </Assign.To>
@@ -167,7 +170,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(4).Split(":"c)(1).Split({"INVOICE"},StringSplitOptions.None)(0)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[invoiceNumber]</OutArgument>
                         </Assign.To>
@@ -175,7 +178,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(4).Split(":"c)(1).Split({"INVOICE"},StringSplitOptions.None)(1).Split("#"c)(1)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_14">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:GenericValue">[vendor]</OutArgument>
                         </Assign.To>
@@ -186,13 +189,13 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence sap:VirtualizedContainerService.HintSize="304,552.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence sap:VirtualizedContainerService.HintSize="496,676" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_2">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:GenericValue">[address]</OutArgument>
                         </Assign.To>
@@ -200,7 +203,7 @@
                           <InArgument x:TypeArguments="ui:GenericValue">[arrayText(1)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_3">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[city]</OutArgument>
                         </Assign.To>
@@ -208,7 +211,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(2).Split(","c)(0)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_4">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[phoneNumber]</OutArgument>
                         </Assign.To>
@@ -216,7 +219,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(3).Split(":"c)(1).Split({"INVOICE"},StringSplitOptions.None)(0)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_5">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[invoiceNumber]</OutArgument>
                         </Assign.To>
@@ -224,7 +227,7 @@
                           <InArgument x:TypeArguments="x:String">[arrayText(3).Split(":"c)(1).Split({"INVOICE"},StringSplitOptions.None)(1).Split("#"c)(1)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                      <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_6">
                         <Assign.To>
                           <OutArgument x:TypeArguments="ui:GenericValue">[vendor]</OutArgument>
                         </Assign.To>
@@ -235,19 +238,19 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Extract relevant information from invoice" sap:VirtualizedContainerService.HintSize="652,52.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrayText]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Extract relevant information from invoice" sap:VirtualizedContainerService.HintSize="580.8,1135.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrayText]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,801.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="545.6,1000.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[item.Contains(&quot;Bank Name:&quot;)]" DisplayName="Extract bank name" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[item.Contains(&quot;Bank Name:&quot;)]" DisplayName="Extract bank name" sap:VirtualizedContainerService.HintSize="483.2,269.6" sap2010:WorkflowViewState.IdRef="If_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -255,7 +258,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_7">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[bankName]</OutArgument>
                               </Assign.To>
@@ -265,7 +268,7 @@
                             </Assign>
                           </If.Then>
                         </If>
-                        <If Condition="[item.Contains(&quot;Bank Account:&quot;)]" DisplayName="Extract bank account" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[item.Contains(&quot;Bank Account:&quot;)]" DisplayName="Extract bank account" sap:VirtualizedContainerService.HintSize="483.2,269.6" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -273,7 +276,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_8">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[bankAccount]</OutArgument>
                               </Assign.To>
@@ -283,7 +286,7 @@
                             </Assign>
                           </If.Then>
                         </If>
-                        <If Condition="[item.contains(&quot;IBAN Code:&quot;)]" DisplayName="Extract IBAN code" sap:VirtualizedContainerService.HintSize="483.2,209.6" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[item.contains(&quot;IBAN Code:&quot;)]" DisplayName="Extract IBAN code" sap:VirtualizedContainerService.HintSize="483.2,269.6" sap2010:WorkflowViewState.IdRef="If_3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -291,7 +294,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign sap:VirtualizedContainerService.HintSize="433.6,80.8" sap2010:WorkflowViewState.IdRef="Assign_9">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">[ibanCode]</OutArgument>
                               </Assign.To>
@@ -311,7 +314,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:ForEach>
-                <ui:WriteTextFile DisplayName="Write Text File" FileName="InvoiceDetails.txt" sap:VirtualizedContainerService.HintSize="652,88" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Invoice details&quot;+Environment.NewLine+Environment.NewLine+&quot;Vendor: &quot;+vendor+Environment.NewLine+&quot;Vendor address: &quot;+address+Environment.NewLine+&quot;City: &quot;+city+Environment.NewLine+&quot;Phone number:&quot;+phoneNumber+Environment.NewLine+&quot;Invoice number:&quot;+invoiceNumber+Environment.NewLine+&quot;Bank name:&quot;+bankName+Environment.NewLine+&quot;Bank account:&quot;+bankAccount+Environment.NewLine+&quot;IBAN Code:&quot;+ibanCode]" />
+                <ui:WriteTextFile DisplayName="Write Text File" FileName="InvoiceDetails.txt" sap:VirtualizedContainerService.HintSize="1036,88" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[&quot;Invoice details&quot;+Environment.NewLine+Environment.NewLine+&quot;Vendor: &quot;+vendor+Environment.NewLine+&quot;Vendor address: &quot;+address+Environment.NewLine+&quot;City: &quot;+city+Environment.NewLine+&quot;Phone number:&quot;+phoneNumber+Environment.NewLine+&quot;Invoice number:&quot;+invoiceNumber+Environment.NewLine+&quot;Bank name:&quot;+bankName+Environment.NewLine+&quot;Bank account:&quot;+bankAccount+Environment.NewLine+&quot;IBAN Code:&quot;+ibanCode]" />
               </Sequence>
             </FlowStep>
           </FlowDecision.True>
@@ -365,5 +368,24 @@
     <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
+    <FlowStep x:Name="__ReferenceID4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">0,83.6</av:Point>
+          <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">100,136.4 100,174.5 0,174.5 0,54.5 240,54.5 240,84.5 300,84.5 300,114.5</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;the start&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID3</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
   </Flowchart>
 </Activity>
