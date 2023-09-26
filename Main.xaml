@@ -66,7 +66,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,107.7 240,107.7 240,53.6 100,53.6 100,83.6</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.7 280,77.7 280,83.6</av:PointCollection>
         <x:Double x:Key="Height">787.59999999999991</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -76,9 +76,9 @@
     <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,114.5</av:Point>
+          <av:Point x:Key="ShapeLocation">180,186.4</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,167.3 300,197.3 300.1,197.3 300.1,226.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">280,239.2 300.1,239.2 300.1,226.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:InputDialog DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Choose one option below:" Options="[{&quot;Read PDF Text&quot;, &quot;Read PDF With OCR&quot;}]" Title="Options">
@@ -371,9 +371,9 @@
     <FlowStep x:Name="__ReferenceID4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">0,83.6</av:Point>
+          <av:Point x:Key="ShapeLocation">180,83.6</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">100,136.4 100,174.5 0,174.5 0,54.5 240,54.5 240,84.5 300,84.5 300,114.5</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">280,136.4 280,186.4</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;the start&quot;]">
